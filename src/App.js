@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import MovieItem from "./components/MovieItem";
+import requests from "./apis/requests";
+import "./styles/main.scss";
 
-function App() {
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="ui container">
+            <MovieItem title="Netflix Original" fetchUrl={requests.fetchNetflixOriginals} isLargeRow/>
+            <MovieItem title="Trending now" fetchUrl={requests.fetchTrending}/>
+            <MovieItem title="Top rated" fetchUrl={requests.fetchTopRated}/>
+            <MovieItem title="Action movies" fetchUrl={requests.fetchActionMovies}/>
+            <MovieItem title="Comedy movies" fetchUrl={requests.fetchComedyMovies}/>
+            <MovieItem title="Horror movies" fetchUrl={requests.fetchHorrorMovies}/>
+            <MovieItem title="Romance movies" fetchUrl={requests.fetchRomanceMovies}/>
+            <MovieItem title="Documentary movies" fetchUrl={requests.fetchDocumentaries}/>
     </div>
   );
 }
