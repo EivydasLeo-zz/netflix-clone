@@ -7,3 +7,13 @@
 .wrapper {
   background: $main-black-color;
 }
+
+.swiper-button-prev, .swiper-button-next {
+  color: $main-white-color  !important;
+  padding: 24px;
+  transition: transform 450ms;
+
+  &:hover {
+    transform: scale(1.3);
+  }
+}

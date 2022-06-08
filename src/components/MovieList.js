@@ -5,7 +5,7 @@ import requests from "../apis/requests";
 const MovieList = () => {
     return (
         <div className="row__list">
-            <MovieItem title="Netflix Original" fetchUrl={requests.fetchNetflixOriginals} isLargeRow/>
+            <MovieItem title="Netflix Original" fetchUrl={requests.fetchNetflixOriginals}/>
             <MovieItem title="Trending now" fetchUrl={requests.fetchTrending}/>
             <MovieItem title="Top rated" fetchUrl={requests.fetchTopRated}/>
             <MovieItem title="Action movies" fetchUrl={requests.fetchActionMovies}/>

@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import instance from "../apis/netflix";
 
 // import Swiper core and required modules
-import { Navigation } from 'swiper';
+import {Navigation} from 'swiper';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
+import {Swiper, SwiperSlide} from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/scss';
@@ -13,7 +13,7 @@ import 'swiper/scss/scrollbar';
 
 const img_url = "https://image.tmdb.org/t/p/original/"
 
-const MovieItem = ({ title, fetchUrl, isLargeRow }) => {
+const MovieItem = ({title, fetchUrl}) => {
 
     const [movies, setMovies] = useState([]);
 
@@ -24,9 +24,9 @@ const MovieItem = ({ title, fetchUrl, isLargeRow }) => {
             setMovies(request.data.results)
             return request
         }
+
         fetchData()
     }, [fetchUrl])
-
 
     return (
         <div className="row">
@@ -42,18 +42,17 @@ const MovieItem = ({ title, fetchUrl, isLargeRow }) => {
                 onSlideChange={() => null}
             >
 
-                    <div className="row__posters">
-                        {movies.map((movie) =>
-                            <SwiperSlide key={movie.id}>
+                <div className="row__posters">
+                    {movies.map((movie) =>
+                        <SwiperSlide key={movie.id}>
                             <img className={`row__poster`}
                                  loading="lazy"
                                  src={`${img_url}${movie.backdrop_path}`}
                                  alt={movie.name}
                             />
-                            </SwiperSlide>
-                        )}
-
-                    </div>
+                        </SwiperSlide>
+                    )}
+                </div>
 
             </Swiper>
 

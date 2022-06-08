@@ -1,5 +1,6 @@
 .row {
   &__list {
+    margin-top: 32px;
     max-width: calc(100% - 20px);
 
     > *:not(:last-child) {

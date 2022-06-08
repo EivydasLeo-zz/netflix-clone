@@ -20,7 +20,7 @@
 
   &__poster {
     object-fit: contain;
-    max-width: 280px;
+    max-width: 275px;
     max-height: 161px;
     transition: transform 450ms;
 
@@ -28,8 +28,4 @@
       transform: scale(1.08);
     }
   }
-}
-
-.swiper-button-prev, .swiper-button-next {
-  color: $main-white-color
 }
