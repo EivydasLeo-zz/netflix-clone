@@ -30,24 +30,24 @@ const MovieItem = ({ title, fetchUrl, isLargeRow }) => {
 
     return (
         <div className="row">
-            <h1>{title}</h1>
+            <h1 className="row__title">{title}</h1>
 
             <Swiper
                 modules={[Navigation]}
-                slidesPerView={6}
+                slidesPerView={6.1}
                 slidesPerGroup={4}
                 speed={1000}
                 navigation
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')}
+                onSwiper={() => null}
+                onSlideChange={() => null}
             >
 
                     <div className="row__posters">
                         {movies.map((movie) =>
                             <SwiperSlide key={movie.id}>
-                            <img className={`row__poster ${isLargeRow && "row__poster--large"}`}
+                            <img className={`row__poster`}
                                  loading="lazy"
-                                 src={`${img_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`}
+                                 src={`${img_url}${movie.backdrop_path}`}
                                  alt={movie.name}
                             />
                             </SwiperSlide>
