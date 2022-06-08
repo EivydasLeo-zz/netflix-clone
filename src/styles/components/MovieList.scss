@@ -1,0 +1,10 @@
+.row {
+  &__list {
+    max-width: calc(100% - 20px);
+
+    > *:not(:last-child) {
+      margin-bottom: 48px;
+    }
+
+  }
+}

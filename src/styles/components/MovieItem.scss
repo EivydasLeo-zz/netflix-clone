@@ -1,9 +1,10 @@
-
 .row {
   margin-left: 40px;
 
   &__title {
     color: $main-gray-color;
+    margin-bottom: 24px;
+    font-size: 1.4vw;
   }
 
   &__posters {
@@ -19,8 +20,8 @@
 
   &__poster {
     object-fit: contain;
-    max-width: 233px;
-    max-height: 131px;
+    max-width: 280px;
+    max-height: 161px;
     transition: transform 450ms;
 
     &:hover {

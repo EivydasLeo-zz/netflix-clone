@@ -34,7 +34,7 @@ const MovieItem = ({ title, fetchUrl, isLargeRow }) => {
 
             <Swiper
                 modules={[Navigation]}
-                slidesPerView={6.1}
+                slidesPerView={6.2}
                 slidesPerGroup={4}
                 speed={1000}
                 navigation
