@@ -5,7 +5,7 @@ import "./styles/main.scss";
 const App = () => {
 
   return (
-    <div className="ui container">
+    <div className="wrapper">
             <MovieItem title="Netflix Original" fetchUrl={requests.fetchNetflixOriginals} isLargeRow/>
             <MovieItem title="Trending now" fetchUrl={requests.fetchTrending}/>
             <MovieItem title="Top rated" fetchUrl={requests.fetchTopRated}/>
