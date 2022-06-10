@@ -5,6 +5,7 @@
   padding: 20px;
   height: 60px;
   z-index: 2;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.7) 10%, rgba(0,0,0,0));
 
   display: flex;
   justify-content: space-between;
@@ -15,21 +16,48 @@
   transition: all 1s;
 
   &__logo {
-    position: fixed;
-    left: 20px;
     width: 80px;
     object-fit: contain;
   }
 
   &__avatar {
-    position: fixed;
-    right: 20px;
     width: 30px;
     object-fit: contain;
   }
 
   &__black {
     background-color: $main-black-color;
+  }
+
+  &__item {
+    &--secondary {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__unordered-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+
+    > *:not(:first-child) {
+      margin-left: 20px;
+    }
+
+    > *:first-child {
+      height: 20px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $main-gray-color;
+    font-size: 13px;
+
+    &:hover {
+      color: #b3b3b3;
+    }
   }
 }
 
