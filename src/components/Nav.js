@@ -1,5 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
+import {FaSearch} from "@react-icons/all-files/fa/FaSearch";
+import {IoNotifications} from "@react-icons/all-files/io5/IoNotifications";
+import {IoMdArrowDropdown} from "@react-icons/all-files/io/IoMdArrowDropdown";
+
+
 
 const Nav = () => {
 
@@ -52,16 +57,16 @@ const Nav = () => {
             </div>
 
             <div className="nav__item nav__item--secondary">
-                <div>Search Icon</div>
+                <FaSearch color="white" fontSize="22px" />
                 <Link className="nav__link" to="kids">
                     <div>Kids</div>
                 </Link>
-                <div>Notification</div>
+                <IoNotifications color="white" fontSize="25px"/>
                 <Link to="/">
                     <img className="nav__avatar"
                          src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
                          alt="Avatar logo"/>
-                    <span>Arrow</span>
+                   <IoMdArrowDropdown color="white" fontSize="23px"/>
                 </Link>
             </div>
 

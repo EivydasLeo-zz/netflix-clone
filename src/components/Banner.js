@@ -2,6 +2,9 @@ import React, {useEffect, useState} from 'react';
 import requests from "../apis/requests";
 import instance from "../apis/netflix";
 
+import {FaPlay} from "@react-icons/all-files/fa/FaPlay";
+import {AiOutlineInfoCircle} from "@react-icons/all-files/ai/AiOutlineInfoCircle";
+
 const Banner = () => {
     const [movie, setMovie] = useState([]);
 
@@ -37,8 +40,14 @@ const Banner = () => {
                 </p>
 
                 <div className="banner__buttons">
-                    <button className="banner__button">Play</button>
-                    <button className="banner__button">More Info</button>
+                    <button className="banner__button">
+                        <FaPlay fontSize="28px" />
+                        <span className="banner__button-text">Play</span>
+                    </button>
+                    <button className="banner__button">
+                        <AiOutlineInfoCircle fontSize="28px"/>
+                        <span className="banner__button-text">More Info</span>
+                    </button>
                 </div>
             </div>
 
