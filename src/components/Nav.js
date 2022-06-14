@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import {FaSearch} from "@react-icons/all-files/fa/FaSearch";
 import {IoNotifications} from "@react-icons/all-files/io5/IoNotifications";
 import {IoMdArrowDropdown} from "@react-icons/all-files/io/IoMdArrowDropdown";
@@ -39,29 +39,31 @@ const Nav = () => {
                         </Link>
                     </li>
                     <li className="nav__list">
-                        <Link className="nav__link" to="/home">Home</Link>
+                        <NavLink className="nav__link" to="/home" activeClassName="selected">Home</NavLink>
                     </li>
                     <li className="nav__list">
-                        <Link className="nav__link" to="/tv-shows">TV Shows</Link>
+                        <NavLink className="nav__link" to="/tv-shows" activeClassName="selected">TV Shows</NavLink>
                     </li>
                     <li className="nav__list">
-                        <Link className="nav__link" to="/movies">Movies</Link>
+                        <NavLink className="nav__link" to="/movies" activeClassName="selected">Movies</NavLink>
                     </li>
                     <li className="nav__list">
-                        <Link className="nav__link" to="/new-popular">New & Popular</Link>
+                        <NavLink className="nav__link" to="/new-popular" activeClassName="selected">New & Popular</NavLink>
                     </li>
                     <li className="nav__list">
-                        <Link className="nav__link" to="/my-list">My List</Link>
+                        <NavLink className="nav__link" to="/my-list" activeClassName="selected">My List</NavLink>
                     </li>
                 </ul>
             </div>
 
             <div className="nav__item nav__item--secondary">
-                <FaSearch color="white" fontSize="22px" />
+                <div className="searchBox">
+                    <FaSearch color="white" fontSize="22px" cursor="pointer"/>
+                </div>
                 <Link className="nav__link" to="kids">
                     <div>Kids</div>
                 </Link>
-                <IoNotifications color="white" fontSize="25px"/>
+                <IoNotifications color="white" fontSize="25px" cursor="pointer"/>
                 <Link to="/">
                     <img className="nav__avatar"
                          src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"

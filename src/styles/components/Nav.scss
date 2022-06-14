@@ -61,9 +61,19 @@
     color: $main-gray-color;
     font-size: 13px;
 
+    &.active:hover {
+      color: white;
+    }
+
     &:hover {
       color: #b3b3b3;
     }
   }
+}
+
+.active {
+  color: #fff;
+  font-weight: 700;
+  cursor: default;
 }
 
