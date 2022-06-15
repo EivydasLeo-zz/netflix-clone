@@ -28,7 +28,6 @@ const Nav = () => {
     return (
         <div className={`nav ${show && "nav__black"}`}>
 
-
             <div className="nav__item">
                 <ul className="nav__unordered-list">
                     <li className="nav__list">
@@ -39,19 +38,20 @@ const Nav = () => {
                         </Link>
                     </li>
                     <li className="nav__list">
-                        <NavLink className="nav__link" to="/home" activeClassName="selected">Home</NavLink>
+                        <NavLink to="/home" className={({isActive}) => "nav__link" + (isActive ? " active" : "")}>Home</NavLink>
                     </li>
                     <li className="nav__list">
-                        <NavLink className="nav__link" to="/tv-shows" activeClassName="selected">TV Shows</NavLink>
+                        <NavLink to="/tv-shows" className={({isActive}) => "nav__link" + (isActive ? " active" : "")}>TV Shows</NavLink>
                     </li>
                     <li className="nav__list">
-                        <NavLink className="nav__link" to="/movies" activeClassName="selected">Movies</NavLink>
+                        <NavLink to="/movies" className={({isActive}) => "nav__link" + (isActive ? " active" : "")}>Movies</NavLink>
                     </li>
                     <li className="nav__list">
-                        <NavLink className="nav__link" to="/new-popular" activeClassName="selected">New & Popular</NavLink>
+                        <NavLink to="/new-popular" className={({isActive}) => "nav__link" + (isActive ? " active" : "")}>New & Popular</NavLink>
                     </li>
                     <li className="nav__list">
-                        <NavLink className="nav__link" to="/my-list" activeClassName="selected">My List</NavLink>
+                        <NavLink to="/my-list" className={({isActive}) => "nav__link" + (isActive ? " active" : "")}>My List</NavLink>
+
                     </li>
                 </ul>
             </div>
