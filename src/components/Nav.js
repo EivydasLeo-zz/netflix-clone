@@ -6,9 +6,10 @@ import {IoMdArrowDropdown} from "@react-icons/all-files/io/IoMdArrowDropdown";
 
 
 
-const Nav = () => {
-
+const Nav = ( ) => {
     const [show, setShow] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('')
+    const [searchActive, setSearchActive] = useState(false)
 
     useEffect(() => {
         window.addEventListener("scroll", () => {
@@ -58,7 +59,8 @@ const Nav = () => {
 
             <div className="nav__item nav__item--secondary">
                 <div className="searchBox">
-                    <FaSearch color="white" fontSize="22px" cursor="pointer"/>
+                    <FaSearch color="white" fontSize="22px" cursor="pointer" onClick={() => setSearchActive(prevState => !prevState)}/>
+                    <input className={`searchBox__input ${searchActive ? 'visible' : 'hidden'}`} type="text" value={searchTerm} onChange={({target}) => setSearchTerm(target.value)} placeholder="Title, people, genres"/>
                 </div>
                 <Link className="nav__link" to="kids">
                     <div>Kids</div>
