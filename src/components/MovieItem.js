@@ -3,7 +3,6 @@ import instance from "../apis/netflix";
 
 // import Swiper core and required modules
 import {Navigation} from 'swiper';
-
 import {Swiper, SwiperSlide} from 'swiper/react';
 
 // Import Swiper styles
