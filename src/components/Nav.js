@@ -24,11 +24,11 @@ const Nav = () => {
     };
   }, []);
 
-  let useClickOutside = (handler) => {
-    let domNode = useRef();
+  const useClickOutside = (handler) => {
+    const domNode = useRef();
 
     useEffect(() => {
-      let searchHandler = (event) => {
+      const searchHandler = (event) => {
         if (!domNode.current.contains(event.target)) {
           handler();
         }
@@ -43,9 +43,11 @@ const Nav = () => {
     return domNode;
   };
 
-  let domNode = useClickOutside(() => {
+  const domNode = useClickOutside(() => {
     setSearchActive(false);
   });
+
+  const navLinkActive = ({ isActive }) => 'nav__link' + (isActive ? ' active' : '');
 
   return (
     <div className={`nav ${show && 'nav__black'}`}>
@@ -61,42 +63,27 @@ const Nav = () => {
             </Link>
           </li>
           <li className="nav__list">
-            <NavLink
-              to="/home"
-              className={({ isActive }) => 'nav__link' + (isActive ? ' active' : '')}
-            >
+            <NavLink to="/home" className={navLinkActive}>
               Home
             </NavLink>
           </li>
           <li className="nav__list">
-            <NavLink
-              to="/tv-shows"
-              className={({ isActive }) => 'nav__link' + (isActive ? ' active' : '')}
-            >
+            <NavLink to="/tv-shows" className={navLinkActive}>
               TV Shows
             </NavLink>
           </li>
           <li className="nav__list">
-            <NavLink
-              to="/movies"
-              className={({ isActive }) => 'nav__link' + (isActive ? ' active' : '')}
-            >
+            <NavLink to="/movies" className={navLinkActive}>
               Movies
             </NavLink>
           </li>
           <li className="nav__list">
-            <NavLink
-              to="/new-popular"
-              className={({ isActive }) => 'nav__link' + (isActive ? ' active' : '')}
-            >
+            <NavLink to="/new-popular" className={navLinkActive}>
               New & Popular
             </NavLink>
           </li>
           <li className="nav__list">
-            <NavLink
-              to="/my-list"
-              className={({ isActive }) => 'nav__link' + (isActive ? ' active' : '')}
-            >
+            <NavLink to="/my-list" className={navLinkActive}>
               My List
             </NavLink>
           </li>

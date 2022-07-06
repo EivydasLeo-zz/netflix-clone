@@ -36,8 +36,7 @@ const MovieItem = ({ title, fetchUrl }) => {
         speed={1000}
         navigation
         onSwiper={() => null}
-        onSlideChange={() => null}
-      >
+        onSlideChange={() => null}>
         <div className="row__posters">
           {movies.map((movie) => (
             <SwiperSlide key={movie.id}>
