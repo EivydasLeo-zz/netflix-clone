@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Link, NavLink} from "react-router-dom";
 import {FaSearch} from "@react-icons/all-files/fa/FaSearch";
 import {IoNotifications} from "@react-icons/all-files/io5/IoNotifications";
@@ -25,6 +25,30 @@ const Nav = ( ) => {
             })
         }
     }, []);
+
+    let useClickOutside = (handler) => {
+
+        let domNode = useRef();
+
+        useEffect(() => {
+            let searchHandler = (event) => {
+                if (!domNode.current.contains(event.target)) {
+                    handler()
+                }
+            };
+            document.addEventListener("mousedown", searchHandler);
+
+            return () => {
+                document.removeEventListener("mousedown", searchHandler)
+            }
+        });
+
+        return domNode
+    }
+
+    let domNode = useClickOutside(() => {
+        setSearchActive(false)
+    })
 
     return (
         <div className={`nav ${show && "nav__black"}`}>
@@ -58,7 +82,7 @@ const Nav = ( ) => {
             </div>
 
             <div className="nav__item nav__item--secondary">
-                <div className="searchBox">
+                <div ref={domNode} className="searchBox" >
                     <FaSearch color="white" fontSize="22px" cursor="pointer" onClick={() => setSearchActive(prevState => !prevState)}/>
                     <input className={`searchBox__input ${searchActive ? 'visible' : 'hidden'}`} type="text" value={searchTerm} onChange={({target}) => setSearchTerm(target.value)} placeholder="Title, people, genres"/>
                 </div>
